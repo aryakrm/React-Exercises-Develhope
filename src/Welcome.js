@@ -1,4 +1,4 @@
-function Welcome({ name }) {
+function Welcome({ name = "Arya" }) {
   return (
     <div>
       <p>Welcome {name}!</p>
