@@ -3,8 +3,8 @@ import Age from "./Age";
 function Welcome({ name, age }) {
   return (
     <div>
-      <p>Welcome {name}!</p>
-      <Age age={age} />
+      {name === "John" && age > 18 && age < 65 && <p>Welcome {name}!</p>}
+      {age > 18 && age < 65 && <Age age={age} />}
     </div>
   );
 }
