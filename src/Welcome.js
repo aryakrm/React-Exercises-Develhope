@@ -1,8 +1,10 @@
+import Age from "./Age";
+
 function Welcome({ name, age }) {
   return (
     <div>
       <p>Welcome {name}!</p>
-      <p>Your age is {age}</p>
+      <Age age={age} />
     </div>
   );
 }
