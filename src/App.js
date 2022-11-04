@@ -1,12 +1,10 @@
 import "./App.css";
 
 function App() {
-  const hello = "Hello, World!";
-  return (
-    <div className="App">
-      <h1>{hello}</h1>
-    </div>
-  );
+  const hello = (name) => {
+    return <h1>Hello, {name}</h1>;
+  };
+  return <div className="App">{hello("Arya")}</div>;
 }
 
 export default App;
