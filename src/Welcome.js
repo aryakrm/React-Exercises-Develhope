@@ -1,7 +1,8 @@
-function Welcome({ name = "Arya" }) {
+function Welcome({ name, age }) {
   return (
     <div>
       <p>Welcome {name}!</p>
+      <p>Your age is {age}</p>
     </div>
   );
 }
