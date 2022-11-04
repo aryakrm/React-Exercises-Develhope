@@ -1,11 +1,10 @@
 import "./App.css";
-import Welcome from "./Welcome";
+import Counter from "./Counter";
 
 function App() {
-  const name1 = "John";
   return (
     <div className="App">
-      <Welcome name={name1} age="23" />
+      <Counter />
     </div>
   );
 }
