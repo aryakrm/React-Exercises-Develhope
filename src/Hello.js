@@ -1,4 +1,5 @@
 import React from "react";
+import Message from "./Message";
 
 class Hello extends React.Component {
   state = {};
@@ -6,7 +7,7 @@ class Hello extends React.Component {
     return (
       <div className="App">
         <h1>Hello, World!</h1>
-        <p>What a beautiful day!</p>
+        <Message />
       </div>
     );
   }
