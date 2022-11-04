@@ -6,6 +6,7 @@ class Hello extends React.Component {
     return (
       <div className="App">
         <h1>Hello, World!</h1>
+        <p>What a beautiful day!</p>
       </div>
     );
   }
