@@ -43,13 +43,18 @@ class Login extends React.Component {
           style={{ marginTop: "1rem" }}
           onChange={this.handleChange}
         />
-        <input
-          name="remember"
-          type="checkbox"
-          style={{ marginTop: "1rem" }}
-          checked={this.state.remember}
-          onChange={this.handleChange}
-        />
+        <div>
+          <label for="remember" style={{ fontSize: "14px" }}>
+            Remember me
+          </label>
+          <input
+            name="remember"
+            type="checkbox"
+            style={{ marginTop: "1rem" }}
+            checked={this.state.remember}
+            onChange={this.handleChange}
+          />
+        </div>
       </div>
     );
   }
