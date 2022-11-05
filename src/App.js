@@ -1,10 +1,10 @@
 import "./App.css";
-import Welcome from "./Welcome";
+import InteractiveWelcome from "./InteractiveWelcome";
 
 function App() {
   return (
     <div className="App">
-      <Welcome name="Arya" />
+      <InteractiveWelcome name="Arya" />
     </div>
   );
 }
