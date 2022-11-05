@@ -4,7 +4,7 @@ import InteractiveWelcome from "./InteractiveWelcome";
 function App() {
   return (
     <div className="App">
-      <InteractiveWelcome name="Arya" />
+      <InteractiveWelcome />
     </div>
   );
 }
