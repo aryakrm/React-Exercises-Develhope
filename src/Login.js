@@ -44,7 +44,7 @@ class Login extends React.Component {
           onChange={this.handleChange}
         />
         <div>
-          <label for="remember" style={{ fontSize: "14px" }}>
+          <label htmlFor="remember" style={{ fontSize: "14px" }}>
             Remember me
           </label>
           <input
