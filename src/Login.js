@@ -5,6 +5,7 @@ class Login extends React.Component {
     username: "",
     password: "",
     remember: false,
+    logedIn: false,
   };
   handleChange = (event) => {
     const value = event.target.value;
@@ -16,6 +17,13 @@ class Login extends React.Component {
       [name]: type === "checkbox" ? checked : value,
     });
   };
+  handleClick = (event) => {
+    this.setState({
+      logedIn: true,
+    });
+    console.log(this.state.logedIn);
+  };
+
   render() {
     return (
       <div
@@ -44,7 +52,7 @@ class Login extends React.Component {
           onChange={this.handleChange}
         />
         <div>
-          <label for="remember" style={{ fontSize: "14px" }}>
+          <label htmlFor="remember" style={{ fontSize: "14px" }}>
             Remember me
           </label>
           <input
@@ -55,6 +63,20 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
         </div>
+        <button
+          type="button"
+          disabled={!this.state.username || !this.state.password}
+          onClick={this.handleClick}
+          style={{
+            marginTop: "1rem",
+          }}
+        >
+          log in
+        </button>
+
+        <h3 style={{ color: "green" }}>
+          {this.state.logedIn && "You are logged in now!"}
+        </h3>
       </div>
     );
   }
