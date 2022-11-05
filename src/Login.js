@@ -24,6 +24,15 @@ class Login extends React.Component {
     console.log(this.state.logedIn);
   };
 
+  resetClick = () => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+      logedIn: false,
+    });
+  };
+
   render() {
     return (
       <div
@@ -63,6 +72,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
         </div>
+        <button onClick={this.resetClick}>reset</button>
         <button
           type="button"
           disabled={!this.state.username || !this.state.password}
