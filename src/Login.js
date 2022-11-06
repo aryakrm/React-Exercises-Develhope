@@ -25,6 +25,16 @@ class Login extends React.Component {
   };
 
   render() {
+    const btnStyle = {
+      marginTop: "1rem",
+      backgroundColor: `${
+        this.state.password === ""
+          ? "transparent"
+          : this.state.password.length > 8
+          ? "green"
+          : "red"
+      }`,
+    };
     return (
       <div
         style={{
@@ -67,9 +77,7 @@ class Login extends React.Component {
           type="button"
           disabled={!this.state.username || !this.state.password}
           onClick={this.handleClick}
-          style={{
-            marginTop: "1rem",
-          }}
+          style={btnStyle}
         >
           log in
         </button>
