@@ -36,6 +36,14 @@ class TodoList extends React.Component {
     });
     event.preventDefault();
   };
+  deleteItem = (event) => {
+    const itemNumber = event.target.parentNode.getAttribute("name");
+    console.log(itemNumber);
+    const newtodoList = this.state.todolist.filter((e) => e.id !== itemNumber);
+    this.setState({
+      todolist: newtodoList,
+    });
+  };
   resetClick = (event) => {
     this.setState({
       todolist: [],
@@ -43,6 +51,7 @@ class TodoList extends React.Component {
     });
     event.preventDefault();
   };
+
   render() {
     return (
       <div>
@@ -60,7 +69,13 @@ class TodoList extends React.Component {
         </button>
         <ul>
           {this.state.todolist.map((item) => (
-            <li key={item.id}>{item.title}</li>
+            <li key={item.id} name={item.id}>
+              {item.title}
+              <span> </span>
+              <button type="button" onClick={this.deleteItem}>
+                Delete
+              </button>
+            </li>
           ))}
         </ul>
       </div>
