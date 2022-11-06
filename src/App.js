@@ -1,11 +1,11 @@
 import "./App.css";
-import Login from "./Login";
+import Container from "./Container";
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Container>
+      <div className="styleOfDiv">This Div is clideren of Container</div>
+    </Container>
   );
 }
 
