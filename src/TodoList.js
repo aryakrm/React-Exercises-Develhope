@@ -1,26 +1,25 @@
 import React from "react";
 
-const todolist = [
-  {
-    id: 1,
-    title: "Study",
-  },
-  {
-    id: 2,
-    title: "Workout",
-  },
-  {
-    id: 3,
-    title: "Buy food",
-  },
-  {
-    id: 4,
-    title: "Sleep",
-  },
-];
-
 class TodoList extends React.Component {
   state = {
+    todolist: [
+      {
+        id: 1,
+        title: "Study",
+      },
+      {
+        id: 2,
+        title: "Workout",
+      },
+      {
+        id: 3,
+        title: "Buy food",
+      },
+      {
+        id: 4,
+        title: "Sleep",
+      },
+    ],
     toDo: "",
   };
   inputChange = (event) => {
@@ -30,11 +29,10 @@ class TodoList extends React.Component {
     console.log(this.state.toDo);
   };
   btnClick = (event) => {
-    const id = todolist.length + 1;
-    todolist.push({ id: id, title: `${this.state.toDo}` });
-    console.log(this.state.toDo);
+    let id = this.state.todolist.length + 1;
     this.setState({
-      toDo: " ",
+      todolist: [...this.state.todolist, { id: id, title: this.state.toDo }],
+      toDo: "",
     });
     event.preventDefault();
   };
@@ -51,7 +49,7 @@ class TodoList extends React.Component {
           Add
         </button>
         <ul>
-          {todolist.map((item) => (
+          {this.state.todolist.map((item) => (
             <li key={item.id}>{item.title}</li>
           ))}
         </ul>
