@@ -36,6 +36,13 @@ class TodoList extends React.Component {
     });
     event.preventDefault();
   };
+  resetClick = (event) => {
+    this.setState({
+      todolist: [],
+      toDo: "",
+    });
+    event.preventDefault();
+  };
   render() {
     return (
       <div>
@@ -47,6 +54,9 @@ class TodoList extends React.Component {
         />
         <button type="button" onClick={this.btnClick}>
           Add
+        </button>
+        <button type="reset" onClick={this.resetClick}>
+          Clear
         </button>
         <ul>
           {this.state.todolist.map((item) => (
