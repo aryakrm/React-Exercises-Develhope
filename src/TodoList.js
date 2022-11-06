@@ -39,9 +39,9 @@ class TodoList extends React.Component {
   deleteItem = (event) => {
     const itemNumber = event.target.parentNode.getAttribute("name");
     console.log(itemNumber);
-    const newtodoList = this.state.todolist.filter((e) => e.id !== itemNumber);
+    const rm = this.state.todolist[itemNumber - 1];
     this.setState({
-      todolist: newtodoList,
+      todolist: this.state.todolist.filter((e) => e !== rm),
     });
   };
   resetClick = (event) => {
