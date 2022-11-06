@@ -32,6 +32,7 @@ class TodoList extends React.Component {
     let id = this.state.todolist.length + 1;
     this.setState({
       todolist: [...this.state.todolist, { id: id, title: this.state.toDo }],
+      toDo: "",
     });
     event.preventDefault();
   };
