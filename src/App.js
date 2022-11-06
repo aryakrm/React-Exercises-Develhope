@@ -3,7 +3,7 @@ import Container from "./Container";
 
 function App() {
   return (
-    <Container>
+    <Container title="Hello This is a title">
       <div className="styleOfDiv">This Div is clideren of Container</div>
     </Container>
   );
