@@ -32,7 +32,6 @@ class TodoList extends React.Component {
     let id = this.state.todolist.length + 1;
     this.setState({
       todolist: [...this.state.todolist, { id: id, title: this.state.toDo }],
-      toDo: "",
     });
     event.preventDefault();
   };
@@ -41,7 +40,7 @@ class TodoList extends React.Component {
       <div>
         <input
           type="text"
-          value={this.state.toDO}
+          value={this.state.toDo}
           placeholder="What needs to be done?"
           onChange={this.inputChange}
         />
