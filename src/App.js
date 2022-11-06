@@ -1,12 +1,15 @@
+import React from "react";
 import "./App.css";
-import TodoList from "./TodoList";
+import Welcome from "./Welcome";
 
-function App() {
-  return (
-    <div className="App">
-      <TodoList />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Welcome className="welcome" name="Arya" />
+      </div>
+    );
+  }
 }
 
 export default App;
