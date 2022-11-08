@@ -52,6 +52,18 @@ class TodoList extends React.Component {
     event.preventDefault();
   };
 
+  renderItems = (items, deleteItem) => {
+    return items.map((item) => (
+      <li key={item.id} name={item.id}>
+        {item.title}
+        <span> </span>
+        <button type="button" onClick={deleteItem}>
+          Delete
+        </button>
+      </li>
+    ));
+  };
+
   render() {
     return (
       <div>
@@ -67,17 +79,7 @@ class TodoList extends React.Component {
         <button type="reset" onClick={this.resetClick}>
           Clear
         </button>
-        <ul>
-          {this.state.todolist.map((item) => (
-            <li key={item.id} name={item.id}>
-              {item.title}
-              <span> </span>
-              <button type="button" onClick={this.deleteItem}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
+        <ul>{this.renderItems(this.state.todolist, this.deleteItem)}</ul>
       </div>
     );
   }
