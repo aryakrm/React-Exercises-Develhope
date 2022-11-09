@@ -1,5 +1,6 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
+import Consumer from "./Consumer";
 
 export class DisplayLanguage extends React.Component {
   state = {
@@ -19,6 +20,7 @@ export class DisplayLanguage extends React.Component {
         </select>
         <LanguageContext.Provider value={this.state.language}>
           <div>{this.state.language}</div>
+          <Consumer />
         </LanguageContext.Provider>
       </div>
     );
