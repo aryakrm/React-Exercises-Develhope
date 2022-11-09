@@ -1,11 +1,10 @@
 import "./App.css";
-import { Sum } from "./Sum";
-import TodoList from "./TodoList";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 function App() {
   return (
     <div className="App">
-      <Sum />
+      <DisplayLanguage />
     </div>
   );
 }
