@@ -4,7 +4,7 @@ import GithubUser from "./GithubUser";
 function App() {
   return (
     <div className="App">
-      <GithubUser username="aryakrm" />
+      <GithubUser username="mkubera" />
     </div>
   );
 }
