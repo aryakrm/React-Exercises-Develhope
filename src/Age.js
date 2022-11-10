@@ -1,5 +1,5 @@
 function Age({ age }) {
-  return <div>{age > 18 && <p>Your age is {age}</p>}</div>;
+  return <div>Your age is {age}</div>;
 }
 
 export default Age;
