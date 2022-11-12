@@ -1,10 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 import GithubUser from "./GithubUser";
 
 function App() {
+  const [username, setUsername] = useState("");
+
   return (
     <div className="App">
-      <GithubUser username="mkubera" />
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <GithubUser username={username} />
     </div>
   );
 }
