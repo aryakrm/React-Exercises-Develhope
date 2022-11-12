@@ -1,18 +1,14 @@
-import { useState } from "react";
 import "./App.css";
-import GithubUser from "./GithubUser";
-
+import useCounter from "./useCounter";
 function App() {
-  const [username, setUsername] = useState("");
+  const { counter, onIncrement, onDecrement, onReset } = useCounter();
 
   return (
     <div className="App">
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <GithubUser username={username} />
+      <h1>{counter}</h1>
+      <button onClick={onIncrement}>+</button>
+      <button onClick={onDecrement}>-</button>
+      <button onClick={onReset}>Reset</button>
     </div>
   );
 }
