@@ -1,14 +1,29 @@
+import useChangeEvent from "./useChangeEvent";
 import "./App.css";
-import useCounter from "./useCounter";
+
 function App() {
-  const { counter, onIncrement, onDecrement, onReset } = useCounter();
+  const { data, onChangeEvent } = useChangeEvent();
 
   return (
     <div className="App">
-      <h1>{counter}</h1>
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
-      <button onClick={onReset}>Reset</button>
+      <input
+        type="text"
+        name="username"
+        value={data.username}
+        onChange={onChangeEvent}
+      />
+      <input
+        type="password"
+        name="password"
+        value={data.password}
+        onChange={onChangeEvent}
+      />
+      <input
+        type="checkbox"
+        name="remember"
+        checked={data.remember}
+        onChange={onChangeEvent}
+      />
     </div>
   );
 }
