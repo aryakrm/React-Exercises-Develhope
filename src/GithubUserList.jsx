@@ -1,9 +1,12 @@
 import { useState } from "react";
+import ShowGithubUser from "./ShowGithubUser";
 export default function GithubUserList({ newUser, changeHandler }) {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [userList, setUserList] = useState([]);
+  const [userList, setUserList] = useState([
+    { name: data.name, img: data.avatar_url },
+  ]);
 
   const clickHandler = (e) => {
     setLoading(true);
@@ -22,6 +25,7 @@ export default function GithubUserList({ newUser, changeHandler }) {
       .catch((err) => {
         setError(err);
       });
+
     setUserList((userList) => [
       ...userList,
       { name: `${data.name}`, img: `${data.avatar_url}` },
@@ -39,19 +43,12 @@ export default function GithubUserList({ newUser, changeHandler }) {
       />
       <button onClick={clickHandler}>Add new User</button>
 
-      <div>
-        {loading && <p>Loading...</p>}
-        {error && <p>The user is not found</p>}
-        {data &&
-          userList.map((user) => {
-            return (
-              <div>
-                <p>{user.name}</p>
-                <img src={user.img} alt="userPic" />
-              </div>
-            );
-          })}
-      </div>
+      <ShowGithubUser
+        loading={loading}
+        error={error}
+        data={data}
+        userList={userList}
+      />
     </div>
   );
 }
