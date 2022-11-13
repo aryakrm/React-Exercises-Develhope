@@ -6,7 +6,7 @@ export default function GithubUser() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const { username } = useParams();
+  const { username = "mkubera" } = useParams();
 
   useEffect(() => {
     setLoading(true);
