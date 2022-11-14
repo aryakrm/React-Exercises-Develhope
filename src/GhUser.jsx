@@ -1,6 +1,5 @@
 import { useState } from "react";
 import GhUserList from "./GhUserList";
-import ShowGithubUser from "./ShowGithubUser";
 
 export default function GhUser() {
   const [username, setUsername] = useState("");

@@ -1,7 +1,6 @@
-import { Route, Routes, Link, useParams } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import GhUser from "./GhUser";
-import GhUserList from "./GhUserList";
 import ShowGithubUser from "./ShowGithubUser";
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
       <Link to="/users">Open Search</Link>
       <Routes>
         <Route path="/users" element={<GhUser />}>
+          <Route index element={<p>Add a user please</p>} />
           <Route path=":username" element={<ShowGithubUser />} />
         </Route>
       </Routes>

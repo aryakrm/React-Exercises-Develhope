@@ -1,5 +1,4 @@
 import { Link, Outlet } from "react-router-dom";
-import ShowGithubUser from "./ShowGithubUser";
 
 export default function GhUserList({ data, username }) {
   return (
