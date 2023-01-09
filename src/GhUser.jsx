@@ -27,7 +27,10 @@ export default function GhUser() {
       .catch((err) => {
         setError(err);
       });
-    setUserList((userList) => [...userList, <GhUserList data={data} />]);
+    
+    // My bad :))) I forgot this one. Is it okay now?
+    
+    setUserList((userList) => [...userList, "Flavius");
   }
 
   return (
