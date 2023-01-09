@@ -6,7 +6,9 @@ export default function GhUser() {
   const [data, setData] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [userList, setUserList] = useState([<GhUserList data={data} />]);
+  
+  // Did you mean like this?
+  const [userList, setUserList] = useState(["Arya", "Aiman", "Mikolaj"]);
 
   function addUser() {
     setLoading(true);
